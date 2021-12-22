@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bookito</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="stylecss.css">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <nav>
+        <div>
+            <img class="logo"
+                src="https://www.designfreelogoonline.com/wp-content/uploads/2015/02/00318-Free-logo-maker-Books-Logo-Templates-04.png">
+        </div>
+        <div class="navlinks">
+            <ul>
+                <li><a href="#">Bookshelf</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Cummunity</a></li>
+                <li><a href="#">Sing Out</a></li>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="linebetween"></div>
+
+    <main>
+        <form  class="formations" action="" id="form" action="/">
+
+        <div class="pr-group">
+            <h2>Title :</h2>
+
+            <input type="text" value="title" placeholder="....." id="title">
+            <h6 id="error1"></h6>
+            <br>
+            <h2>Price :</h2>
+            <input type="number" value="price" placeholder="...Dh" id="price">
+            <h6 id="error2"></h6>
+            <br>
+            <h2>Language :</h2>
+            <br>
+            <select id="lang" value="language">
+                <option value=""> select </option>
+                <option value="English">English</option>
+                <option value="Arabic">arabic</option>
+                <option value="Frensh">Frensh</option>
+                <option value="Spanish">Spanish</option>
+            </select>
+            <h6 id="error3"></h6>
+            <br>
+            <div class="tt">
+            <h2>Author Email :</h2>
+            <input type="email" value="email" id="email" onkeydown="validation()"placeholder="......">
+            <h6 id="error4"></h6>
+            </div> 
+        </div>
+        <div class="de-group">
+            <h2>Name of Author :</h2>
+            <input type="text" value="author" id="author" placeholder=".......">
+            <h6 id="error5"></h6>
+            <br>
+            <h2>Publication Date :</h2>
+            <input type="date" value="date" id="date" placeholder="DD/MM/YYYY">
+            <h6 id="error6"></h6>
+            <br>
+            <h2>Type:</h2>
+            <BR>
+            <div class="type">
+
+                <input type="radio" name="radio" class="radio" value="type" /><label>Novel</label>
+                <input type="radio" name="radio" class="radio" value="type" /> <label>Comic</label>
+                <input type="radio" name="radio" class="radio" value="type" /> <label>Essay</label>
+                <h6 id="error7"></h6>
+            </div>
+            <br>
+            
+        </div>
+        <!-- <div class="btn">
+        <input type="button" onclick="onFormSubmit()" id="Done" value="Submit">
+    <button type="reset" value="" id="REset">Reset</button>
+    </div> -->
+        <div class="rest">
+                <div>
+                    <button type="submit" onclick="onFormSubmit()" id="Done">Submit</button>
+                </div>
+                <div> <button type="reset" onclick="resetFormm()" value="Reset" id="rest">Reset</button></div>
+            </div>
+    </form>
+    
+
+</div>
+
+
+    </main>
+    <td>
+        <table class="list" id="employeeList">
+            <thead>
+                <tr>
+                    <th> Title</th>
+                    <th>Author Name</th>
+                    <th> Price</th>
+                    <th> Date Of Publication</th>
+                    <th>language</th>
+                    <th> type</th>
+                    <th> Email of author</th>
+                    <td><i class="fa fa-edit btnedit"></i> and<i class="fa fa-trash btndelet"></i>
+
+                    </td>
+
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </td>
+    <div class="ll">
+    <button type="save" value="" id="savet">Save<i class="fa fa-save"></i> </button>
+</div>
+<!-- foooooooooooooooooooooooter -->
+    <footer>
+
+        <div class="contact">
+            <ul>
+                <li><a href="#" class=" fa fa-map-marker">&ensp;<samp>Location</samp><br>
+                        <p>Bni Ouriaghl. Tanger</p>
+                    </a></li>
+                <li><a href="#" class=" fa fa-phone">&ensp;<samp>Phone</samp><br>
+                        <p>0514568790</p>
+                    </a></li>
+                <li><a href="#" class=" fa fa-envelope">&ensp;<samp>Email</samp><br>
+                        <p>bookito20@gmail.com</p>
+                    </a></li>
+
+            </ul>
+        </div>
+
+        <div class="footer">
+            <div>
+
+
+            </div>
+
+        </div>
+        <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i
+                    class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a
+                href="#"><i class="icon ion-social-facebook"></i></a></div>
+        <div class="coppyrght">
+            <p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Copyright &COPY;2021-2022 . <span> Bookito </span></p>
+        </div>
+    </footer>
+    <script src="/js.js"></script>
+
+</body>
+
+</html>
