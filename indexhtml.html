@@ -33,70 +33,67 @@
     <div class="linebetween"></div>
 
     <main>
-        <form  class="formations" action="" id="form" action="/">
+        <form class="formations" action="" id="form" action="/">
 
-        <div class="pr-group">
-            <h2>Title :</h2>
+            <div class="pr-group">
+                <h2>Title :</h2>
 
-            <input type="text" value="title" placeholder="....." id="title">
-            <h6 id="error1"></h6>
-            <br>
-            <h2>Price :</h2>
-            <input type="number" value="price" placeholder="...Dh" id="price">
-            <h6 id="error2"></h6>
-            <br>
-            <h2>Language :</h2>
-            <br>
-            <select id="lang" value="language">
-                <option value=""> select </option>
-                <option value="English">English</option>
-                <option value="Arabic">arabic</option>
-                <option value="Frensh">Frensh</option>
-                <option value="Spanish">Spanish</option>
-            </select>
-            <h6 id="error3"></h6>
-            <br>
-            <div class="tt">
-            <h2>Author Email :</h2>
-            <input type="email" value="email" id="email" onkeydown="validation()"placeholder="......">
-            <h6 id="error4"></h6>
-            </div> 
-        </div>
-        <div class="de-group">
-            <h2>Name of Author :</h2>
-            <input type="text" value="author" id="author" placeholder=".......">
-            <h6 id="error5"></h6>
-            <br>
-            <h2>Publication Date :</h2>
-            <input type="date" value="date" id="date" placeholder="DD/MM/YYYY">
-            <h6 id="error6"></h6>
-            <br>
-            <h2>Type:</h2>
-            <BR>
-            <div class="type">
-
-                <input type="radio" name="radio" class="radio" value="type" /><label>Novel</label>
-                <input type="radio" name="radio" class="radio" value="type" /> <label>Comic</label>
-                <input type="radio" name="radio" class="radio" value="type" /> <label>Essay</label>
-                <h6 id="error7"></h6>
-            </div>
-            <br>
-            
-        </div>
-        <!-- <div class="btn">
-        <input type="button" onclick="onFormSubmit()" id="Done" value="Submit">
-    <button type="reset" value="" id="REset">Reset</button>
-    </div> -->
-        <div class="rest">
-                <div>
-                    <button type="submit" onclick="onFormSubmit()" id="Done">Submit</button>
+                <input type="text" value="" placeholder="&ensp;&ensp;........" id="title">
+                <h6 id="error1"></h6>
+                <br>
+                <h2>Price :</h2>
+                <input type="number" value="price" placeholder="&ensp;&ensp;...Dh" id="price">
+                <h6 id="error2"></h6>
+                <br>
+                <h2>Language :</h2>
+                <br>
+                <select id="lang" value="language">
+                    <option value=""> select </option>
+                    <option value="English">English</option>
+                    <option value="Arabic">arabic</option>
+                    <option value="Frensh">Frensh</option>
+                    <option value="Spanish">Spanish</option>
+                </select>
+                <h6 id="error3"></h6>
+                <br>
+                <div class="tt">
+                    <h2>Author Email :</h2>
+                    <input type="text" value="" id="email" onkeydown="validation()" placeholder="&ensp;&ensp;......">
+                    <h6 id="error4"></h6>
                 </div>
+            </div>
+            <div class="de-group">
+                <h2>Name of Author :</h2>
+                <input type="text" value="" id="name" placeholder="&ensp;&ensp;.......">
+                <h6 id="error5"></h6>
+                <br>
+                <h2>Publication Date :</h2>
+                <input type="date" value="date" id="date" placeholder="&ensp;&ensp;DD/MM/YYYY">
+                <h6 id="error6"></h6>
+                <br>
+                <h2>Type:</h2>
+                <BR>
+                <div class="type">
+
+                    <input type="radio" name="radio" class="type" value="Novel" /><label>Novel</label>
+                    <input type="radio" name="radio" class="type" value="Comic" /> <label>Comic</label>
+                    <input type="radio" name="radio" class="type" value="Essay" /> <label>Essay</label>
+                    <h4 id="error7"></h4>
+                </div>
+                <br>
+
+            </div>
+        
+    <div class="btn">
+        <button type="submit" onclick="onFormSubmit()" id="Done">Submit</button>
+    </div>
+    <div class="rest">
                 <div> <button type="reset" onclick="resetFormm()" value="Reset" id="rest">Reset</button></div>
             </div>
-    </form>
-    
+        </form>
 
-</div>
+
+        </div>
 
 
     </main>
@@ -123,9 +120,9 @@
         </table>
     </td>
     <div class="ll">
-    <button type="save" value="" id="savet">Save<i class="fa fa-save"></i> </button>
-</div>
-<!-- foooooooooooooooooooooooter -->
+        <button type="save" value="" id="savet">Save<i class="fa fa-save"></i> </button>
+    </div>
+    <!-- foooooooooooooooooooooooter -->
     <footer>
 
         <div class="contact">

@@ -98,7 +98,7 @@ nav{
   height: 50px;
   border-radius: 20px;
   }
-  .radio{
+  .type{
     margin-top:20px;
     margin-right:20px ;
     margin-left: 15px;
@@ -118,21 +118,52 @@ nav{
     height:50px;
     margin-top:50PX;
     border-radius:18px;
-    font-size: 20px;
+    font-size: 22px;
     font-style: bold;
-    background-color: rgba(243, 155, 104, 0.555);
+    background-color: rgba(243, 155, 104, 0.76);
     
   }
- input[type="button" i] {
+ button[type="submit" i] {
   width:100px;
   height:50px;
 
   margin-top:50PX;
   border-radius:18px;
-  font-size: 20px;
+  font-size: 22px;
   font-style: bold;
-  background-color: rgba(243, 155, 104, 0.555);
+  background-color: rgba(243, 155, 104, 0.76);
  }
+ input[type="button" i] {
+  width:40px;
+ 
+
+  margin-top:20PX;
+  border-radius:18px;
+  
+  font-style: bold;
+  background-color: rgba(243, 155, 104, 0.76);
+ }
+ h6{
+ 
+   margin-top:10px ;
+  font-family:sans-serif;
+  color: red;
+  font-size: 16px;
+
+  
+}
+h4{
+  background-color: #ffffff8e;
+  background-size:20PX ;
+  font-family:sans-serif;
+  color: red;
+  font-size: 15px;
+  position: absolute;
+  top:600px;
+  right: 420px;
+
+  
+}
 
  .btn{
    margin-left: 80%;
@@ -141,7 +172,7 @@ nav{
  table {
 
   margin-top: 10px;
-  background-color: rgb(233 234 239);
+  background-color: rgba(233, 234, 239, 0.932);
 border-radius: 20px ;
   font-family: sans-serif;
   border-collapse: collapse;
@@ -153,14 +184,21 @@ border-radius: 20px ;
 }
 
  th {
-  border-radius: 20px  ;
-  border: 1px solid #ebd3d3;
+  border-radius: 20px  20px ;
+  border: 1px solid#ebd3d3 20px 20px 20px;
+  text-align: left;
+  padding: 8px;
+}
+ td {
+  
+  border: 1px solid#ebd3d3;
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #ccc;
+  background-color: #5e5c5f;
+  color: aliceblue;
 }
 .fa-edit:before, .fa-pencil-square-o:before {
 color: rgba(117, 201, 117, 0.795);
