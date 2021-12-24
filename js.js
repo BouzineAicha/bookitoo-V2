@@ -1,40 +1,6 @@
-var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-function validation() {
-  var form = document.getElementsByClassName("formations");
-  var email = document.getElementByI("email").value;
 
-  var text = document.getElementById("error4");
-  var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-
-  if (email.match(pattern)) {
-    form.classList.add("valid");
-    form.classList.remove("invalid");
-    text.innerHTML = "✔";
-    text.style.color = "#00ff00";
-  } else {
-    form.classList.remove("invalid");
-    form.classList.add("valid");
-    text.innerHTML = "❌";
-    text.style.color = "red";
-  }
-}
-                              //claaaaaaaaaaaaaaaaaaaaaaaass//
-// var book = newOuvrage ("title","author","price","date","language","type","email")
-class Ouvrage {
-            constructor(title, author,price,date,language,type,email){
-                this.Title=title;
-                this.Author=author;
-                this.Price=price;
-                this.Date=date;
-                this.Language=language;
-                this.Type=type;
-                this.Email=email; 
-            }
-      //  DétailOuvrage(){
-      //    return "the book" + Title + "is" + Type + "her language" +Language+
-      //  }
-          }
-
+//                               //claaaaaaaaaaaaaaaaaaaaaaaass//
+// // var book = newOuvrage ("title","author","price","date","language","type","email")
 
 const Title = document.getElementById("title");
 const Price = document.getElementById("price");
@@ -164,33 +130,24 @@ form.addEventListener("submit", (e) => {
         errorPrice.style.color = "green";
     }
   });
-//   Radiiiiiiiiiiiiiiiiiiiiiiiiio//
+//   Emaillllllllllllllllllllll//
 
-
-
+var  regexEmail= /^(((\w+)(\.)(\w+))|((\w+)))(@)(\w+)(\.)(\w+)$/;
 form.addEventListener("submit", (e) => {
   let messages = [];
-  if (email.value === "" || email.value === null) {
-    messages.push(" The Title field is not filled out  *");
-  }
-  if (messages.length > 0) {
-    e.preventDefault();
-    errorEmail.innerText = messages.join(", ");
-  } else {
-    errorEmail.innerHTML = "✔";
-      errorEmail.style.color = "green";
-     
-      
-  }
-
-});
-
-
-form.addEventListener("submit", (e) => {
-var mybook =new Ouvrage(title.value,author.value,price.value,date.value,language.value,type.value,email.value)
-listbook.push(mybook)
-  
-
+if(Email.value !=="" ){
+    if(regexEmail.test(Email.value)){
+        errorEmail.innerHTML="✔"
+        Email.style.border="green"
+    }
+    else{
+        errorEmail.innerHTML="please enter email without /^(((\w+)(\.)(\w+))|((\w+)))(@)(\w+)(\.)(\w+)$/, Or just Lutter "
+        no_valide++;
+    }
+}else{
+    errorEmail.innerHTML="The Title field is not filled out*"
+    no_valide++;
+}
 });
 
 
@@ -198,6 +155,8 @@ listbook.push(mybook)
 
 
 
+
+// tableauuuuuuuuuuu//
 
 
 
@@ -207,17 +166,17 @@ listbook.push(mybook)
 
 var selectedRow = null;
 function onFormSubmit(e){
- 
-    var formData = readFormData();
-    if(selectedRow === null){
-
-        insertNewRecord(formData);
-    }
-    else{
-        updateRecord(formData);
-    }
-    resetForm();
-    }
+  
+  var formData = readFormData();
+  if(selectedRow === null){
+    
+    insertNewRecord(formData);
+  }
+  else{
+    updateRecord(formData);
+  }
+  resetForm();
+}
 
 
 function readFormData() {
@@ -229,9 +188,9 @@ function readFormData() {
   formData["name"] = document.getElementById("name").value;
   formData["date"] = document.getElementById("date").value;
   formData['type'] = document.querySelector('input[name="radio"]:checked').value;
- 
+  
   return formData;
-
+  
 }
 
 function insertNewRecord(data) {
@@ -254,7 +213,7 @@ function insertNewRecord(data) {
   
   cell8 = newRow.insertCell(7);
   cell8.innerHTML = `<input by type="button" onClick="onEdit(this)" value="Edit"  >
-                     <input by type="button" onClick="onDelete(this)" value="Delete">`;
+  <input by type="button" onClick="onDelete(this)" value="Delete">`;
 }
 
 
@@ -279,22 +238,22 @@ function updateRecord(formData) {
 }
 function resetForm()
 {
-    document.getElementById('title').value = '';
-    document.getElementById('price').value = '';
-    document.getElementById('lang').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('name').value = '';
-    document.getElementById('date').value = '';
-    document.getElementsByClassName('type').value = '';
-
-
-    selectedRow = null;
+  document.getElementById('title').value = '';
+  document.getElementById('price').value = '';
+  document.getElementById('lang').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('name').value = '';
+  document.getElementById('date').value = '';
+  document.getElementsByClassName('type').value = '';
+  
+  
+  selectedRow = null;
 }
 function onDelete(td) {
   if (confirm('Are you sure to delete this record ?')) {
-      row = td.parentElement.parentElement;
-      document.getElementById("employeeList").deleteRow(row.rowIndex);
-       resetForm();
+    row = td.parentElement.parentElement;
+    document.getElementById("employeeList").deleteRow(row.rowIndex);
+    resetForm();
   }
 }
 
@@ -302,12 +261,12 @@ function onDelete(td) {
 function validate() {
   isValid = true;
   if (document.getElementById("title").value == "") {
-      isValid = false;
-      document.getElementById("titleValidationError").classList.remove("hide");
+    isValid = false;
+    document.getElementById("titleValidationError").classList.remove("hide");
   } else {
-      isValid = true;
-      if (!document.getElementById("titleValidationError").classList.contains("hide"))
-          document.getElementById("titleValidationError").classList.add("hide");
+    isValid = true;
+    if (!document.getElementById("titleValidationError").classList.contains("hide"))
+    document.getElementById("titleValidationError").classList.add("hide");
   }
   return isValid;
 }
@@ -316,6 +275,41 @@ function validate() {
 
 
 
- 
+class Ouvrage {
+  constructor(title, author,price,date,language,type,email){
+    this.Title=title;
+    this.Author=author;
+    this.Price=price;
+    this.Date=date;
+    this.Language=language;
+    this.Type=type;
+    this.Email=email; 
+  }
+  
+  DétailOuvrage(){
+    return "the book" + Title + "is" + Type + "in the" +Language+ ", written by"+ Author + "and published on the" + Date + " . The price of" +Title  + "is" + Price + "Dhs"
+  }
+}
 
 
+var listOvrage=book.parse(localStorage.getItem("lstOuvrage"));
+    if(listOvrage!=null){
+        for(i=0;i<listOvrage.length;i++){
+            var ouvrage = new Ouvrage(listOvrage[i].Title,listOvrage[i].Author,listOvrage[i].Price,listOvrage[i].Language,listOvrage[i].date,listOvrage[i].Email,listOvrage[i].Type);
+            listbook.push(ouvrage);
+        }
+    }
+
+
+
+form.addEventListener("submit", (e) => {
+var mybook =new Ouvrage(title.value,author.value,price.value,date.value,language.value,type.value,email.value)
+listbook.push(mybook)
+localStorage.setItem("lstOuvrage",book.stringify(list));
+                    table.innerHTML="";
+                    InsertTable();
+                    resetForm();
+            
+  
+
+});
