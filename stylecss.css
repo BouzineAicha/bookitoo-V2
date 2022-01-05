@@ -123,6 +123,10 @@ nav{
     background-color: rgba(243, 155, 104, 0.76);
     
   }
+  .btnedit{
+    display: none;
+  }
+  
  button[type="submit" i] {
   width:100px;
   height:50px;
@@ -134,7 +138,8 @@ nav{
   background-color: rgba(243, 155, 104, 0.76);
  }
  input[type="button" i] {
-  width:40px;
+  width:60px;
+  height: 40px;
  
 
   margin-top:20PX;

@@ -42,7 +42,7 @@
                 <h6 id="error1"></h6>
                 <br>
                 <h2>Price :</h2>
-                <input type="number" value="price" placeholder="&ensp;&ensp;...Dh" id="price">
+                <input type="text" value="" placeholder="&ensp;&ensp;...Dh" id="price">
                 <h6 id="error2"></h6>
                 <br>
                 <h2>Language :</h2>
@@ -58,7 +58,7 @@
                 <br>
                 <div class="tt">
                     <h2>Author Email :</h2>
-                    <input type="text" value="" id="email" onkeydown="validation()" placeholder="&ensp;&ensp;......">
+                    <input type="text" value="" id="email" placeholder="&ensp;&ensp;......">
                     <h6 id="error4"></h6>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                 <h6 id="error5"></h6>
                 <br>
                 <h2>Publication Date :</h2>
-                <input type="date" value="date" id="date" placeholder="&ensp;&ensp;DD/MM/YYYY">
+                <input type="date" value=" " id="date"  placeholder="&ensp;&ensp;MM/dd/YYYY">
                 <h6 id="error6"></h6>
                 <br>
                 <h2>Type:</h2>
@@ -85,8 +85,11 @@
             </div>
         
     <div class="btn">
-        <button type="submit" onclick="onFormSubmit()" id="Done">Submit</button>
+        <button type="submit"  id="Done"  onkeydown="validation()">Submit</button>
     </div>
+    <!-- <div class="btnedit">
+        <button type="submit"  id="btnedit"  onkeydown="validation()">Submit</button>
+    </div> -->
     <div class="rest">
                 <div> <button type="reset" onclick="resetFormm()" value="Reset" id="rest">Reset</button></div>
             </div>
@@ -97,7 +100,9 @@
 
 
     </main>
+   
     <td>
+    
         <table class="list" id="employeeList">
             <thead>
                 <tr>
@@ -114,14 +119,16 @@
 
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="bklist">
 
             </tbody>
         </table>
     </td>
+
     <div class="ll">
-        <button type="save" value="" id="savet">Print<i class="fa fa-save"></i> </button>
+        <button type="" value="" id="savet" >Print<i class="fa fa-save"></i> </button>
     </div>
+    
     <!-- foooooooooooooooooooooooter -->
     <footer>
 
