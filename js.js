@@ -8,7 +8,8 @@ var Name = document.getElementById("name");
 var date = document.getElementById("date");
 var Type = document.getElementsByClassName("type");
 var print_div = document.getElementById("savet");
-  //  var table = document.getElementById("table");
+  var table = document.getElementById("bklist");
+  var para =document.getElementById("paragraphe");
   // var btnedit = docemont.getElementById("btnedit")
 var listbook =[]
   var no_valid = 0;
@@ -180,7 +181,7 @@ class Ouvrage {
  
   }
   DétailOuvrage(){
-    return "the book" +  this.Title + "is" +  this.Type + "in the" +  this.Language + ", written by" +  this.Author + "and published on the" + this. Date + " . The price of" + this. Title  + "is" + this. Price + "Dhs"
+    return "" +  this.Title + "is" +  this.Type + "in the" +  this.Language + ", written by" +  this.Author + "and published on the" + this. Date + " . The price of" + this. Title  + "is" + this. Price + "Dhs"
   }
 }
 var listOvrage = JSON.parse(localStorage.getItem("listOuvrage"));
@@ -188,8 +189,10 @@ var listOvrage = JSON.parse(localStorage.getItem("listOuvrage"));
         for(i=0;i<listOvrage.length;i++){
             var ouvrage = new Ouvrage(listOvrage[i].Title,listOvrage[i].Author,listOvrage[i].Price,listOvrage[i].Date,listOvrage[i].Language,listOvrage[i].Type,listOvrage[i].Email);
             listbook.push(ouvrage);
+
         }
       }
+  
 // tableauuuuuuuuuuu//
 var tbody=document.getElementById("bklist")
 function insertNewRecord() {
@@ -233,6 +236,7 @@ form.addEventListener("submit", (e) => {
        }
      }
     var mybook =new Ouvrage (Title.value,Name.value,Price.value,date.value,Languages.options[Languages.selectedIndex].value,xType,Email.value)
+    paragraphe.innerHTML = mybook. DétailOuvrage();
     listbook.push(mybook)
     sort_alpha();
     localStorage.setItem("listOuvrage",JSON.stringify(listbook));
@@ -273,26 +277,57 @@ function readFormData() {
   
 }
 
-function onEdit(td) {
-  selectedRow = td.parentElement.parentElement;
-  document.getElementById("title").value = selectedRow.cells[0].innerHTML;
-  document.getElementById("name").value = selectedRow.cells[1].innerHTML;
-  document.getElementById("price") .value = selectedRow.cells[2].innerHTML;
-  document.getElementById("date") .value = selectedRow.cells[3].innerHTML;
-  document.getElementById("lang").value = selectedRow.cells[4].innerHTML;
-  document.getElementsByClassName("type").value = selectedRow.cells[5].innerHTML;
-  document.getElementById("email").value = selectedRow.cells[6].innerHTML;
+// form.addEventListener("submit",function onEdit(td) {
+  function onEdit(btn) {
+  var selectedRow = btn.parentElement.parentElement.rowIndex - 1;
+  var X=table.rows[selectedRow]
+  if(btn.value=="Edit"){
+   Title.value = X.cells[0].innerHTML;
+    Name.value = X.cells[1].innerHTML;
+    Price.value = X.cells[2].innerHTML;
+    date .value = X.cells[3].innerHTML;
+    Languages.value = X.cells[4].innerHTML;
+    for(i=0;i<Type.length;i++)
+    {
+      if(X.cells[5].innerHTML==Type[i].value)
+      {
+        Type[i].checked=true;
+      }      
+    }
+    Email.value = X.cells[6].innerHTML;
 
-    var mybook =new Ouvrage (Title.value,Name.value,Price.value,date.value,Languages.options[Languages.selectedIndex].value,Email.value,xType)
-    listbook.push(mybook)
-    localStorage.setItem("listOuvrage",JSON.stringify(listbook));
-    mybook.innerHTML="";
-    insertNewRecord();
-    resetForm();
-              
-    
+
+
+      btn.value="Save"
+      document.getElementById ("Done").setAttribute("disabled","true");
+  }
   
- }
+  else{
+    listbook[selectedRow].Title = Title.value
+    listbook[selectedRow].Author = Name.value
+    listbook[selectedRow].Price = Price.value
+    listbook[selectedRow].Language = Languages.value
+    for(i=0;i<Type.length;i++)
+    {
+      if( Type[i].checked=true)
+      {
+        listbook[selectedRow].Type=Type[i].value;
+      }  
+      
+    }
+    listbook[selectedRow].Email = Email.value
+    table.innerHTML =""
+    sort_alpha();
+    localStorage.setItem("listOuvrage",JSON.stringify(listbook));
+    insertNewRecord();
+    btn.value="Edit"
+    
+    document.getElementById ("Done").removeAttribute("disabled");
+    resetForm();
+  }
+
+  }
+ 
 function updateRecord(formData) {
   selectedRow.cells[0].innerHTML = formData.title;
   selectedRow.cells[1].innerHTML = formData.name;
@@ -318,9 +353,13 @@ function resetForm()
 
 function onDelete(td) {
   if (confirm('Are you sure to delete this record ?')) {
-    row = td.parentElement.parentElement;
-    document.getElementById("employeeList").deleteRow(row.rowIndex);
+    row = td.parentElement.parentElement.rowIndex-1 ;
+    listbook.splice(row,1) ;
+    localStorage.setItem("listOuvrage",JSON.stringify(listbook));
+    table.innerHTML="";
     resetForm();
+    insertNewRecord();
+    
   }
   
 }

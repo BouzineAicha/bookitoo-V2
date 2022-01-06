@@ -106,6 +106,14 @@ nav{
   input[type="radio" i] {
     margin-top: 0px;
   }
+  #paragraphe{
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 60px;
+    color: white;
+    background-color: #66646b;
+    font-size: 20px;
+  }
   label{
     margin-top:10px ;
     margin-right: 60px;
